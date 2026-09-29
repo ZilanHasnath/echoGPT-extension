@@ -1,0 +1,63 @@
+.head, .thread, .panel { padding-inline: clamp(12px, 4cqi, 28px); }
+.composer { margin-inline: clamp(10px, 3cqi, 24px); }
+
+@container shell (min-width: 420px) {
+  .head, .thread, .panel { padding-inline: max(16px, calc((100% - 640px) / 2)); }
+  .composer { margin-inline: max(14px, calc((100% - 640px) / 2)); }
+}
+
+@container shell (min-width: 560px) {
+  .rail { width: 88px; gap: 8px; padding: 14px 8px; }
+  .rail-item { max-width: 70px; padding: 11px 2px 9px; font-size: 11px; }
+  .quick-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .msg.user { max-width: 72%; }
+  .compare-grid, .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; }
+}
+
+@container shell (max-width: 380px) {
+  .rail { width: 58px; padding: 12px 4px; }
+  .rail-item { max-width: 50px; padding: 8px 0; font-size: 9px; }
+  .avatar { width: 32px; height: 32px; }
+  .quick-grid { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .head { padding-block: 12px 8px; }
+  .head .btn.primary { padding: 0 14px; font-size: 12px; }
+  .composer { padding: 10px; border-radius: 24px; }
+  .tool { width: 32px; height: 32px; }
+  .send { width: 40px; height: 40px; }
+  .model-chip .select { max-width: 96px; }
+}
+
+@media (max-height: 680px) {
+  .hero p { display: none; }
+  .welcome { gap: 12px; padding-top: 0; }
+  .hero h2 { font-size: clamp(19px, 6cqi, 26px); }
+  .quick { padding: 9px 10px; }
+  .quick-icon { width: 28px; height: 28px; }
+  .head { padding-block: 10px 6px; }
+  .composer { padding: 9px; margin-bottom: 10px; }
+}
+
+@media (max-height: 480px) {
+  .suggestions { display: none; }
+  .quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .welcome::before { display: none; }
+}
+
+@media (max-height: 360px) {
+  .quick-grid { display: none; }
+  .head { padding-block: 8px 4px; }
+  .head h1 { font-size: 17px; }
+}
+
+.thread {
+  mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 14px), transparent 100%);
+}
+
+@media (pointer: coarse) {
+  .tool { width: 42px; height: 42px; }
+  .icon-btn { width: 44px; height: 44px; }
+  .btn { height: 46px; }
+  .pill { height: 40px; }
+}

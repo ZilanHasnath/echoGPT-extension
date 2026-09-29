@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "EchoGPT - Multi-AI Chat Sidebar",
+  "version": "1.0.0",
+  "description": "A minimal multi-model AI sidebar with chat, writing, page reading, translation, image, video, comparison and MCP tools.",
+  "minimum_chrome_version": "114",
+  "action": {
+    "default_title": "Open EchoGPT",
+    "default_icon": { "16": "assets/icons/icon-16.png", "48": "assets/icons/icon-48.png", "128": "assets/icons/icon-128.png" }
+  },
+  "side_panel": { "default_path": "src/sidepanel/index.html" },
+  "background": { "service_worker": "src/background/service-worker.js", "type": "module" },
+  "permissions": ["sidePanel", "storage", "unlimitedStorage", "contextMenus", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "icons": { "16": "assets/icons/icon-16.png", "48": "assets/icons/icon-48.png", "128": "assets/icons/icon-128.png" }
+}
